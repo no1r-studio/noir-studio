@@ -2,74 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Noir Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noir Studio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: Helvetica, Arial, sans-serif;
-      background: #fff;
-      color: #000;
-    }
-    header {
-      padding: 2rem;
-      text-align: center;
-      border-bottom: 1px solid #e5e5e5;
-    }
-    header h1 {
-      margin: 0;
-      font-weight: 300;
-      letter-spacing: 2px;
-    }
-    header p {
-      margin-top: 0.5rem;
-      color: #666;
-      font-size: 0.9rem;
-    }
-    main {
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-    main h2 {
-      font-weight: 300;
-      margin-bottom: 1rem;
-    }
-    main p {
-      max-width: 600px;
-      margin: auto;
-      color: #444;
-      line-height: 1.6;
-    }
-    footer {
-      margin-top: 4rem;
-      padding: 2rem;
-      font-size: 0.75rem;
-      color: #777;
-      text-align: center;
-      border-top: 1px solid #e5e5e5;
-    }
+    /* Reset & Basic */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; background: linear-gradient(135deg, #1c1c1c, #111); color: #fff; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Header */
+    header { position: sticky; top: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(5px); display: flex; justify-content: space-between; padding: 1rem 2rem; z-index: 1000; }
+    header nav a { margin-left: 1.5rem; font-weight: 700; transition: 0.3s; }
+    header nav a:hover { color: #f39c12; }
+
+    /* Hero Section */
+    .hero { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+    .hero h1 { font-size: 4rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; color: #ccc; max-width: 700px; }
+
+    /* Description Section */
+    .description { text-align: center; padding: 2rem; max-width: 800px; margin: 0 auto; color: #ccc; line-height: 1.6; }
+    
+    /* Portfolio */
+    .portfolio { padding: 5rem 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    .portfolio-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 2rem; text-align: center; border-radius: 12px; transition: 0.3s; }
+    .portfolio-item:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+    /* Clothing Slots */
+    .clothing { padding: 5rem 2rem; }
+    .clothing h2 { text-align: center; margin-bottom: 2rem; font-size: 2.5rem; }
+    .slots { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1.5rem; justify-items: center; }
+    .slot { width: 100px; height: 100px; border: 2px dashed #555; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #555; font-size: 0.9rem; }
+
+    /* Animations & AOS */
+    [data-aos] { opacity: 0; transition-property: transform, opacity; }
+    [data-aos].aos-animate { opacity: 1; }
+
+    /* Footer */
+    footer { text-align: center; padding: 2rem; background: rgba(0,0,0,0.8); border-top: 1px solid #222; margin-top: 5rem; color: #aaa; font-size: 0.9rem; line-height: 1.4; }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>NOIR STUDIO</h1>
-  <p>Independent designer retailer</p>
-</header>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="logo"><strong>Noir Studio</strong></div>
+    <nav>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#clothing">Clothing Slots</a>
+    </nav>
+  </header>
 
-<main>
-  <h2>Curated designer pieces</h2>
-  <p>
-    Noir Studio is a curated boutique for authentic designer pieces. Each item is carefully selected for quality, style, and timeless appeal. We are an independent retailer and not affiliated with any brands shown; all trademarks belong to their owners.
-  </p>
-</main>
+  <!-- Hero Section -->
+  <section class="hero" data-aos="fade-up">
+    <h1>Welcome to Noir Studio</h1>
+    <p>Designing sleek experiences, one pixel at a time.</p>
+  </section>
 
-<footer>
-  <p>
-    Noir Studio is an independent retailer and is not affiliated with any brands shown.
-    All trademarks belong to their respective owners.
-  </p>
-</footer>
+  <!-- Description Section -->
+  <section class="description" data-aos="fade-up">
+    <p>Noir Studio is a curated boutique for authentic designer pieces. Each item is carefully selected for quality, style, and timeless appeal. We are an independent retailer and not affiliated with any brands shown; all trademarks belong to their owners.</p>
+  </section>
 
+  <!-- Portfolio Section -->
+  <section class="portfolio" id="portfolio">
+    <div class="portfolio-item" data-aos="zoom-in">Project 1</div>
+    <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100">Project 2</div>
+    <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">Project 3</div>
+    <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="300">Project 4</div>
+  </section>
+
+  <!-- Clothing Slots Section -->
+  <section class="clothing" id="clothing" data-aos="fade-up">
+    <h2>Clothing Slots</h2>
+    <div class="slots">
+      <div class="slot">Slot 1</div>
+      <div class="slot">Slot 2</div>
+      <div class="slot">Slot 3</div>
+      <div class="slot">Slot 4</div>
+      <div class="slot">Slot 5</div>
+      <div class="slot">Slot 6</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer data-aos="fade-up">
+    Noir Studio is an independent retailer and is not affiliated with any brands shown. All trademarks belong to their respective owners.<br>
+    © 2025 Noir Studio
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000 });
+  </script>
 </body>
 </html>
