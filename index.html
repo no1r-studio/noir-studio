@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Noir Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -13,9 +13,12 @@
     a { text-decoration: none; color: inherit; }
 
     /* Header */
-    header { position: sticky; top: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(5px); display: flex; justify-content: space-between; padding: 1rem 2rem; z-index: 1000; }
-    header nav a { margin-left: 1.5rem; font-weight: 700; transition: 0.3s; }
-    header nav a:hover { color: #f39c12; }
+    header { position: sticky; top: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(5px); display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; z-index: 1000; }
+    .logo { display: flex; flex-direction: column; align-items: center; }
+    .logo img { height: 50px; width: auto; }
+    .logo p { margin-top: 0.2rem; font-size: 0.8rem; color: #ccc; }
+    nav a { margin-left: 1.5rem; font-weight: 700; transition: 0.3s; }
+    nav a:hover { color: #f39c12; }
 
     /* Hero Section */
     .hero { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
@@ -41,14 +44,17 @@
     [data-aos].aos-animate { opacity: 1; }
 
     /* Footer */
-    footer { text-align: center; padding: 2rem; background: rgba(0,0,0,0.8); border-top: 1px solid #222; margin-top: 5rem; color: #aaa; font-size: 0.9rem; line-height: 1.4; }
+    footer { text-align: center; padding: 2rem; background: rgba(0,0,0,0.8); border-top: 1px solid #222; color: #aaa; font-size: 0.9rem; line-height: 1.4; }
   </style>
 </head>
 <body>
 
   <!-- Header / Navigation -->
   <header>
-    <div class="logo"><strong>Noir Studio</strong></div>
+    <div class="logo">
+      <img src="3f4ae364-0f61-4985-8a34-61598f2398d5.png" alt="Noir Studio Logo">
+      <p>sleek. 1 pixel at a time</p>
+    </div>
     <nav>
       <a href="#portfolio">Portfolio</a>
       <a href="#clothing">Clothing Slots</a>
